@@ -47,10 +47,10 @@ body::before {
 body::after {
   content: "";
   position: fixed;
-  inset: -12%;
+  inset: 0;
   z-index: -2;
   background:
-    url("assets/images/mycelium-bg.jpg") 50% 0 / 1200px auto repeat-y;
+    url("assets/images/mycelium-bg.jpg") center / cover no-repeat;
   opacity: 0.08;
   filter: blur(0.8px) contrast(1.2) saturate(0.55);
   pointer-events: none;
@@ -418,7 +418,7 @@ h3 {
   z-index: -1;
   background:
     linear-gradient(180deg, rgba(6, 8, 5, 0.78), rgba(6, 8, 5, 0.46) 48%, rgba(6, 8, 5, 0.88)),
-    url("assets/images/mycelium-bg.jpg") center bottom / cover no-repeat;
+    url("assets/images/mycelium-bg.jpg") center / cover no-repeat;
   background-attachment: fixed;
   filter: contrast(1.14) saturate(0.72);
   opacity: 0.42;
