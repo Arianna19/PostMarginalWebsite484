@@ -44,10 +44,22 @@ body::before {
     linear-gradient(145deg, #020302 0%, #08150d 38%, #102516 70%, #050805 100%);
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: -12%;
+  z-index: -2;
+  background:
+    url("assets/images/mycelium-bg.jpg") 50% 0 / 1200px auto repeat-y;
+  opacity: 0.08;
+  filter: blur(0.8px) contrast(1.2) saturate(0.55);
+  pointer-events: none;
+}
+
 .ambient {
   position: fixed;
   inset: -45vmax;
-  z-index: -2;
+  z-index: -1;
   background:
     conic-gradient(from 0deg, rgba(230, 222, 83, 0.12), rgba(44, 110, 61, 0.36), rgba(5, 8, 5, 0), rgba(243, 200, 79, 0.18), rgba(17, 60, 37, 0.42), rgba(230, 222, 83, 0.12));
   filter: blur(56px);
@@ -89,6 +101,11 @@ body::before {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero::before,
+  .mycelium-section::before {
+    background-attachment: scroll;
   }
 }
 
@@ -176,6 +193,7 @@ iframe:focus-visible {
   background:
     linear-gradient(90deg, rgba(6, 8, 5, 0.86), rgba(6, 8, 5, 0.68) 48%, rgba(6, 8, 5, 0.92)),
     url("assets/images/mycelium-bg.jpg") center / cover no-repeat;
+  background-attachment: fixed;
   filter: contrast(1.08) saturate(0.72);
   opacity: 0.52;
 }
@@ -401,6 +419,7 @@ h3 {
   background:
     linear-gradient(180deg, rgba(6, 8, 5, 0.78), rgba(6, 8, 5, 0.46) 48%, rgba(6, 8, 5, 0.88)),
     url("assets/images/mycelium-bg.jpg") center bottom / cover no-repeat;
+  background-attachment: fixed;
   filter: contrast(1.14) saturate(0.72);
   opacity: 0.42;
 }
