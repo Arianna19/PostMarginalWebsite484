@@ -451,6 +451,16 @@ h3 {
   font-size: 1.12rem;
 }
 
+.summary-quote {
+  margin: 22px 0 0;
+  padding: 0 0 0 18px;
+  border-left: 2px solid rgba(230, 222, 83, 0.62);
+  color: var(--muted);
+  font-family: "IM Fell Great Primer", Georgia, serif;
+  font-size: clamp(1.22rem, 2.1vw, 1.7rem);
+  line-height: 1.28;
+}
+
 .client-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
