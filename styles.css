@@ -28,6 +28,7 @@ body {
   background: var(--black);
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -49,16 +50,9 @@ body::before {
   z-index: -2;
   background:
     conic-gradient(from 0deg, rgba(230, 222, 83, 0.12), rgba(44, 110, 61, 0.36), rgba(5, 8, 5, 0), rgba(243, 200, 79, 0.18), rgba(17, 60, 37, 0.42), rgba(230, 222, 83, 0.12));
-  animation: rotateAtmosphere 28s linear infinite;
   filter: blur(56px);
-  opacity: 0.92;
+  opacity: 0.56;
   transform-origin: center;
-}
-
-@keyframes rotateAtmosphere {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -66,9 +60,6 @@ body::before {
     scroll-behavior: auto;
   }
 
-  .ambient {
-    animation: none;
-  }
 }
 
 a {
@@ -106,18 +97,15 @@ iframe:focus-visible {
   text-decoration: none;
 }
 
-.brand-mark {
-  display: inline-grid;
+.brand-logo {
+  display: block;
   width: 42px;
   height: 42px;
-  place-items: center;
   border: 1px solid rgba(230, 222, 83, 0.48);
   border-radius: 8px;
   background: rgba(230, 222, 83, 0.14);
-  color: var(--acid);
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0;
+  object-fit: contain;
+  padding: 6px;
   box-shadow: inset 0 1px 14px rgba(255, 255, 255, 0.08);
 }
 
@@ -254,7 +242,7 @@ h3 {
   max-width: 760px;
   margin: 24px 0 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.34rem);
 }
 
 .hero-actions {
@@ -336,7 +324,18 @@ h3 {
 .section-heading p:not(.eyebrow) {
   margin: 16px 0 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.12rem;
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.client-card {
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: 8px;
 }
 
 .summary-section {
@@ -387,14 +386,23 @@ h3 {
   backdrop-filter: blur(20px) saturate(145%);
 }
 
-.moodboard-link {
+.moodboard-trigger {
   position: relative;
   display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
   color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
   text-decoration: none;
+  transition: filter 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
-.moodboard-link::after {
+.moodboard-trigger::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -404,16 +412,21 @@ h3 {
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.moodboard-link:hover::after,
-.moodboard-link:focus-visible::after {
+.moodboard-trigger:hover::after,
+.moodboard-trigger:focus-visible::after {
   border-color: rgba(230, 222, 83, 0.86);
-  box-shadow: 0 0 0 5px rgba(230, 222, 83, 0.13);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42), 0 0 0 5px rgba(230, 222, 83, 0.13);
 }
 
-.moodboard-link:hover img,
-.moodboard-link:focus-visible img {
+.moodboard-trigger:hover,
+.moodboard-trigger:focus-visible {
+  filter: drop-shadow(0 18px 30px rgba(230, 222, 83, 0.18));
+  transform: translateY(-2px);
+}
+
+.moodboard-trigger:hover img,
+.moodboard-trigger:focus-visible img {
   filter: saturate(1.08) brightness(1.08);
-  transform: scale(1.01);
 }
 
 .moodboard-card img {
@@ -468,6 +481,29 @@ h3 {
 .site-footer p,
 .check-list {
   color: var(--muted);
+}
+
+.testing-card {
+  min-height: auto;
+  border-radius: 8px;
+}
+
+.testing-card::before {
+  content: none;
+}
+
+.testing-icon {
+  display: inline-grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  margin-bottom: 18px;
+  border: 1px solid rgba(230, 222, 83, 0.42);
+  border-radius: 8px;
+  background: rgba(230, 222, 83, 0.12);
+  color: var(--acid);
+  font-family: "IM Fell Great Primer", Georgia, serif;
+  font-size: 1.5rem;
 }
 
 .band {
@@ -588,6 +624,88 @@ iframe {
   max-width: 650px;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 42px);
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.modal-panel {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  width: min(1120px, 100%);
+  max-height: 90vh;
+  padding: clamp(18px, 3vw, 28px);
+  overflow: auto;
+  border-radius: 8px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modal-panel img {
+  display: block;
+  width: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  background: rgba(246, 240, 215, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.modal-panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(230, 222, 83, 0.42);
+  border-radius: 8px;
+  background: rgba(15, 35, 18, 0.58);
+  color: var(--acid);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: inset 0 1px 18px rgba(255, 255, 255, 0.08), 0 12px 38px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(18px) saturate(160%);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  border-color: rgba(230, 222, 83, 0.86);
+}
+
 .site-footer {
   padding: 28px clamp(18px, 5vw, 72px);
   border-top: 1px solid var(--line);
@@ -611,7 +729,8 @@ iframe {
   .outcome-grid,
   .testing-grid,
   .split-grid,
-  .moodboard-grid {
+  .moodboard-grid,
+  .client-grid {
     grid-template-columns: 1fr;
   }
 

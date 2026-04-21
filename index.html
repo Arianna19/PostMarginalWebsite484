@@ -14,10 +14,11 @@
     <div class="ambient" aria-hidden="true"></div>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="The Centre Cannot Hold redesign home">
-        <span class="brand-mark" aria-hidden="true">TCCH</span>
+        <img class="brand-logo" src="assets/images/tcch-logo.png" alt="" aria-hidden="true">
         <span>Postmarginal Website Redesign</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#client">Client</a>
         <a href="#summary">Summary</a>
         <a href="#moodboards">Moodboards</a>
         <a href="#research">Research</a>
@@ -59,6 +60,31 @@
         </div>
       </section>
 
+      <section class="section client-section" id="client" aria-labelledby="client-title">
+        <div class="section-heading">
+          <p class="eyebrow">Client</p>
+          <h2 id="client-title">The Centre Cannot Hold</h2>
+        </div>
+        <div class="client-grid">
+          <article class="glass-panel client-card">
+            <h3>Project Partner</h3>
+            <p>
+              The client for this redesign is The Centre Cannot Hold, a Postmarginal digital portal
+              featuring artists, creative works, profiles, stories, themes, and resources. The site
+              invites visitors into a community of artists creating between and beyond margins.
+            </p>
+          </article>
+          <article class="glass-panel client-card">
+            <h3>Director</h3>
+            <p>
+              Peter Farbridge, director of The Centre Cannot Hold, framed the project around access,
+              longevity, and care for the existing artistic experience. His feedback helped the redesign
+              balance immersive storytelling with clearer navigation and WCAG-oriented improvements.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section class="section summary-section" id="summary" aria-labelledby="summary-title">
         <div class="section-heading">
           <p class="eyebrow">Short Summary</p>
@@ -80,30 +106,30 @@
         </div>
         <div class="moodboard-grid">
           <figure class="moodboard-card blob blob-one">
-            <a class="moodboard-link" href="assets/images/moodboard-1.png" target="_blank" rel="noopener" aria-label="Open Moodboard 1 as a larger image in a new tab">
+            <button class="moodboard-trigger" type="button" data-full="assets/images/moodboard-1.png" data-caption="Moodboard 1: Puzzle-like theme with tinted and frosted glass image collage." aria-label="Open larger view of Moodboard 1">
               <img src="assets/images/moodboard-1.png" alt="Moodboard showing puzzle-like frosted glass collage visuals, Postmarginal interface sketches, green tones, performance imagery, and layered image fragments.">
               <span class="view-larger">Open larger image</span>
-            </a>
+            </button>
             <figcaption>
               <strong>Moodboard 1</strong>
               Puzzle-like theme with tinted and frosted glass image collage.
             </figcaption>
           </figure>
           <figure class="moodboard-card blob blob-two">
-            <a class="moodboard-link" href="assets/images/moodboard-2.png" target="_blank" rel="noopener" aria-label="Open Moodboard 2 as a larger image in a new tab">
+            <button class="moodboard-trigger" type="button" data-full="assets/images/moodboard-2.png" data-caption="Moodboard 2: Background-focused and more thematic visual direction." aria-label="Open larger view of Moodboard 2">
               <img src="assets/images/moodboard-2.png" alt="Moodboard showing green natural background textures, layered website mockups, dark moss imagery, and thematic nature quotes.">
               <span class="view-larger">Open larger image</span>
-            </a>
+            </button>
             <figcaption>
               <strong>Moodboard 2</strong>
               Background-focused and more thematic visual direction.
             </figcaption>
           </figure>
           <figure class="moodboard-card blob blob-three">
-            <a class="moodboard-link" href="assets/images/moodboard-3.png" target="_blank" rel="noopener" aria-label="Open Moodboard 3 as a larger image in a new tab">
+            <button class="moodboard-trigger" type="button" data-full="assets/images/moodboard-3.png" data-caption="Moodboard 3: Accessibility focus inspired by The Centre Cannot Hold and UserWay tools." aria-label="Open larger view of Moodboard 3">
               <img src="assets/images/moodboard-3.png" alt="Moodboard showing accessibility menu references, larger widget controls, text alternatives, yellow highlights, and Postmarginal interface examples.">
               <span class="view-larger">Open larger image</span>
-            </a>
+            </button>
             <figcaption>
               <strong>Moodboard 3</strong>
               Accessibility focus inspired by The Centre Cannot Hold and UserWay tools.
@@ -247,7 +273,8 @@
           </p>
         </div>
         <div class="testing-grid">
-          <article class="glass-card blob blob-one">
+          <article class="testing-card glass-card">
+            <span class="testing-icon" aria-hidden="true">H</span>
             <h3>Homepage</h3>
             <p>
               The headline describing a "digital portal" gave visitors immediate context.
@@ -255,7 +282,8 @@
               Large poem blocks in the middle of the page risked hiding content below.
             </p>
           </article>
-          <article class="glass-card blob blob-two">
+          <article class="testing-card glass-card">
+            <span class="testing-icon" aria-hidden="true">P</span>
             <h3>Profiles</h3>
             <p>
               The page became clearer when it moved from high-level framing to biography and then
@@ -263,7 +291,8 @@
               The back button should return visitors to the welcome page.
             </p>
           </article>
-          <article class="glass-card blob blob-three">
+          <article class="testing-card glass-card">
+            <span class="testing-icon" aria-hidden="true">E</span>
             <h3>Explore</h3>
             <p>
               Category filtering and "See more themes" worked well for progressive disclosure.
@@ -271,7 +300,8 @@
               accurate filtering instead of randomized performance categories.
             </p>
           </article>
-          <article class="glass-card blob blob-four">
+          <article class="testing-card glass-card">
+            <span class="testing-icon" aria-hidden="true">R</span>
             <h3>Resources</h3>
             <p>
               Dropdown navigation improved when Creative, Organizational, and Advocacy options
@@ -279,7 +309,8 @@
               controls, clearer instructions, and a useful "Back to top" button.
             </p>
           </article>
-          <article class="glass-card blob blob-two">
+          <article class="testing-card glass-card">
+            <span class="testing-icon" aria-hidden="true">A</span>
             <h3>About</h3>
             <p>
               The quote should come after explanatory text rather than before it. Plain language
@@ -287,7 +318,8 @@
               the site was for.
             </p>
           </article>
-          <article class="glass-card blob blob-three">
+          <article class="testing-card glass-card">
+            <span class="testing-icon" aria-hidden="true">N</span>
             <h3>Action items</h3>
             <p>
               Add back buttons across pages, move the home button into the nav, add theme collapse,
@@ -368,6 +400,20 @@
       </section>
     </main>
 
+    <div class="modal" id="moodboard-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-panel glass-panel">
+        <div class="modal-header">
+          <h2 id="modal-title">Moodboard larger view</h2>
+          <button class="modal-close button secondary" type="button" data-close-modal>Close</button>
+        </div>
+        <img id="modal-image" src="" alt="">
+        <p id="modal-caption"></p>
+      </div>
+    </div>
+
+    <a class="back-to-top" href="#top">Back to top</a>
+
     <footer class="site-footer">
       <p>
         Public project mockup for the accessibility-led redesign of
@@ -375,5 +421,43 @@
         a project of Postmarginal.
       </p>
     </footer>
+    <script>
+      const modal = document.querySelector("#moodboard-modal");
+      const modalImage = document.querySelector("#modal-image");
+      const modalCaption = document.querySelector("#modal-caption");
+      const modalClose = document.querySelector(".modal-close");
+      let lastMoodboardTrigger = null;
+
+      document.querySelectorAll(".moodboard-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          lastMoodboardTrigger = trigger;
+          modalImage.src = trigger.dataset.full;
+          modalImage.alt = trigger.querySelector("img").alt;
+          modalCaption.textContent = trigger.dataset.caption;
+          modal.hidden = false;
+          document.body.classList.add("modal-open");
+          modalClose.focus();
+        });
+      });
+
+      function closeMoodboardModal() {
+        modal.hidden = true;
+        modalImage.src = "";
+        document.body.classList.remove("modal-open");
+        if (lastMoodboardTrigger) {
+          lastMoodboardTrigger.focus();
+        }
+      }
+
+      document.querySelectorAll("[data-close-modal]").forEach((control) => {
+        control.addEventListener("click", closeMoodboardModal);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.hidden) {
+          closeMoodboardModal();
+        }
+      });
+    </script>
   </body>
 </html>
