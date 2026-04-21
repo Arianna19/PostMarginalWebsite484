@@ -475,8 +475,7 @@ h3 {
   padding: clamp(34px, 5vw, 64px);
   color: var(--ink);
   font-size: clamp(1.12rem, 1.8vw, 1.46rem);
-  text-align: justify;
-  text-align-last: right;
+  text-align: right;
   line-height: 1.58;
 }
 
