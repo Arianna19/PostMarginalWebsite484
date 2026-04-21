@@ -55,11 +55,41 @@ body::before {
   transform-origin: center;
 }
 
+@keyframes gentleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(230, 222, 83, 0);
+  }
+
+  50% {
+    text-shadow: 0 0 22px rgba(230, 222, 83, 0.22);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 a {
@@ -250,6 +280,7 @@ h1 {
 
 h1 span {
   color: var(--acid);
+  animation: titleGlow 7s ease-in-out infinite;
 }
 
 h2 {
@@ -265,6 +296,25 @@ h3 {
   margin: 24px 0 0;
   color: var(--muted);
   font-size: clamp(1.1rem, 1.5vw, 1.34rem);
+}
+
+.hero-copy .eyebrow,
+.hero-copy h1,
+.hero-text,
+.hero-actions {
+  animation: gentleReveal 700ms ease-out both;
+}
+
+.hero-copy h1 {
+  animation-delay: 90ms;
+}
+
+.hero-text {
+  animation-delay: 170ms;
+}
+
+.hero-actions {
+  animation-delay: 250ms;
 }
 
 .hero-actions {
@@ -373,6 +423,7 @@ h3 {
 .section-heading {
   max-width: 930px;
   margin-bottom: 32px;
+  animation: gentleReveal 680ms ease-out both;
 }
 
 .section-heading p:not(.eyebrow) {
@@ -527,6 +578,13 @@ h3 {
   margin-bottom: 30px;
   color: var(--acid);
   font-weight: 900;
+  transition: transform 180ms ease, text-shadow 180ms ease;
+}
+
+.glass-card:hover .card-number,
+.glass-card:focus-within .card-number {
+  text-shadow: 0 0 18px rgba(230, 222, 83, 0.32);
+  transform: translateY(-2px);
 }
 
 .glass-card p,
