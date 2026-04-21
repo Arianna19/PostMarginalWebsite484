@@ -476,6 +476,7 @@ h3 {
   color: var(--ink);
   font-size: clamp(1.12rem, 1.8vw, 1.46rem);
   text-align: justify;
+  text-align-last: right;
   line-height: 1.58;
 }
 
