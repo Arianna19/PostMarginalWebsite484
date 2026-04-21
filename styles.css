@@ -342,7 +342,7 @@ h3 {
 .mycelium-section::before {
   content: "";
   position: absolute;
-  inset: 18% -8% -18%;
+  inset: 0 -8% -18%;
   z-index: -1;
   background:
     linear-gradient(180deg, rgba(6, 8, 5, 0.78), rgba(6, 8, 5, 0.46) 48%, rgba(6, 8, 5, 0.88)),
